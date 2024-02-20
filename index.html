@@ -11,39 +11,52 @@
             padding: 0;
             text-align: center;
         }
-        .profile-pic {
-            width: 150px; /* Adjust based on your preference */
-            height: 150px; /* Make it a square for the circle to work */
-            border-radius: 50%; /* This creates the circle */
+        .timeline {
+            position: relative;
+            max-width: 900px;
             margin: 20px auto;
-            display: block;
+            padding: 0 10px;
         }
-        .header-image {
-            width: 100%;
-            height: auto;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #ddd;
+            top: 0;
+            bottom: 0;
+            left: 30px;
         }
-        .projects, .about {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
+        .event {
+            margin: 10px 0;
+            padding-left: 60px;
+            position: relative;
         }
-        .project {
-            margin: 15px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            width: 30%;
+        .event::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            background-color: #ddd;
+            width: 10px; /* Smaller circle/dot */
+            height: 10px; /* Smaller circle/dot */
+            border-radius: 50%;
+            z-index: 1;
         }
-        .about {
-            flex-direction: column;
-            text-align: left;
-            width: 60%;
-            margin: auto;
+        .event::after {
+            content: attr(data-year);
+            position: absolute;
+            right: 100%; /* Position the year to the left of the dot */
+            margin-right: 10px; /* Adjust spacing between the year and the dot */
+            top: 10px;
+            color: #333;
+            font-size: 12px; /* Adjust font size as needed */
         }
-        @media (max-width: 600px) {
-            .project, .about {
-                width: 90%;
-            }
+        .content {
+            padding: 10px 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -61,6 +74,37 @@
         <h2>About Me</h2>
         <p>This section is all about you. Write a brief paragraph or two about yourself, your skills, and your experience. This is your chance to introduce yourself to potential employers or clients in a more personal way. Discuss what drives you, your professional interests, and what you're looking for in your career or projects.</p>
     </div>
+
+
+<h1>Project Timeline</h1>
+
+<div class="timeline">
+    <div class="event" data-year="2020">
+        <div class="content">
+            <h2>Project 1</h2>
+            <p>Description of Project 1. This project showcases...</p>
+        </div>
+    </div>
+    <div class="event" data-year="2021">
+        <div class="content">
+            <h2>Project 2</h2>
+            <p>Description of Project 2. In this project, we focused on...</p>
+        </div>
+    </div>
+    <div class="event" data-year="2022">
+        <div class="content">
+            <h2>Project 3</h2>
+            <p>Description of Project 3. The main challenge in this project was...</p>
+        </div>
+    </div>
+    <div class="event" data-year="2023">
+        <div class="content">
+            <h2>Project 4</h2>
+            <p>Description of Project 4. This project allowed us to explore...</p>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
