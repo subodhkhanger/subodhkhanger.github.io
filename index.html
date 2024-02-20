@@ -11,11 +11,18 @@
             padding: 0;
             text-align: center;
         }
+        .profile-pic {
+            width: 150px; /* Adjust based on your preference */
+            height: 150px; /* Make it a square for the circle to work */
+            border-radius: 50%; /* This creates the circle */
+            margin: 20px auto;
+            display: block;
+        }
         .header-image {
             width: 100%;
             height: auto;
         }
-        .projects {
+        .projects, .about {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -27,40 +34,32 @@
             border: 1px solid #ccc;
             width: 30%;
         }
+        .about {
+            flex-direction: column;
+            text-align: left;
+            width: 60%;
+            margin: auto;
+        }
         @media (max-width: 600px) {
-            .project {
+            .project, .about {
                 width: 90%;
             }
         }
     </style>
 </head>
 <body>
-    <img src="https://via.placeholder.com/1200x300" alt="Banner Image" class="header-image">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
 
     <h1>My Portfolio</h1>
     <p>Welcome to my portfolio website. Here are some of my projects.</p>
 
     <div class="projects">
-        <div class="project">
-            <h2>Project 1</h2>
-            <p>Description of Project 1.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="project">
-            <h2>Project 2</h2>
-            <p>Description of Project 2.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="project">
-            <h2>Project 3</h2>
-            <p>Description of Project 3.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="project">
-            <h2>Project 4</h2>
-            <p>Description of Project 4.</p>
-            <a href="#">Read More</a>
-        </div>
+        <!-- Project sections as before -->
+    </div>
+
+    <div class="about">
+        <h2>About Me</h2>
+        <p>This section is all about you. Write a brief paragraph or two about yourself, your skills, and your experience. This is your chance to introduce yourself to potential employers or clients in a more personal way. Discuss what drives you, your professional interests, and what you're looking for in your career or projects.</p>
     </div>
 
 </body>
