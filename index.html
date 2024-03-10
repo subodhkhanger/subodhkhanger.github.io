@@ -233,7 +233,7 @@
     <div class="about">
         <h2>About Me</h2>
         <p>As an aspiring robotics engineer, I’m passionate about using technology
-            to solve real-world problems. I have a solid foundation in computer vision, perception, planning, and control, and I’m eager to apply these skills to excit- ing new projects.</p>
+to solve real-world problems. I have a solid foundation in computer vision, perception, planning, and control, and I’m eager to apply these skills to excit- ing new projects.</p>
     </div>
 </div>
 
@@ -243,12 +243,32 @@
 <div class="timeline">
     <div class="event" data-year="2024">
         <div class="content">
-            <h2>Project  Multimodal Transformer Model For Auto Labeling Object</h2>
+            <h2>Project: Pretraining Based on the LLama2 Architecture to Generate Synthetic Videos for Model Training</h2>
+            <p> Project LLM leverages the advanced LLama2 architecture to pretrain models, focusing on generating high-quality synthetic videos. These videos are specifically designed to enhance model training, bridging the gap in data availability and quality for robust machine learning applications.</p>
+    
+        </div>
+    </div>
+    <div class="event" data-year="2023">
+        <div class="content">
+            <h2>Project  Multimodal Transformer Model For Auto Labeling Traffic Signs</h2>
             <p> Utilizing advanced transformer architectures and ROS (Robot Operating System), automates the labeling process. This integration streamlines object recognition tasks in robotics and machine learning models, enhancing efficiency and accuracy.</p>
-            <video width="520" height="240" controls>
+            <video id="myVideo" width="520" height="240" controls>
                 <source src="videos/output_movie_1.mov" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            
+            <script>
+                // Get the video element
+                var video = document.getElementById('myVideo');
+            
+                // Wait until the metadata has loaded
+                video.addEventListener('loadedmetadata', function() {
+                    // Set the playback rate to 30%
+                    video.playbackRate = 0.5;
+                    video.currentTime = 5;
+
+                });
+            </script>
         </div>
     </div>
    
@@ -316,7 +336,7 @@
             <ul class="description">
                 <li>Lead developer in a dynamic team, responsible for developing and implementing front-end web applications.</li>
                 <li>Managed projects from concept through completion, ensuring high performance and responsiveness of applications.</li>
-                Add more points as needed -->
+                
             </ul>
         </div>
     </div>
@@ -332,22 +352,20 @@
             <ul class="description">
                 <li>Developed and maintained code for client websites primarily using HTML, CSS, JavaScript, and jQuery.</li>
                 <li>Worked closely with clients to create vision, conceive designs, and consistently meet deadlines and requirements.</li>
-                <!-- Add more points as needed -->
+               
             </ul>
         </div>
-    </div>
-    <!-- Add more job entries as needed -->
-
-    <h2 style="text-align: left; margin-left: 0px;">Featured Writing</h2> <!-- Aligns the header to the left -->
-
+    </div> 
+  
+    <h2 style="text-align: left; margin-left: 0px;">Featured Writing</h2> 
     <div class="featured-writing">
-        <!-- Featured writing entries -->
+      
         <div class="writing-piece"><span class="date">Mar 2021</span><span class="title">A from-scratch tour of Bitcoin in Python</span></div>
-        <!-- Additional entries -->
+       
     </div>
 
-    <!-- Add more writing pieces as needed -->
-</div>
+    
+</div> -->
 
 </body>
 </html>
