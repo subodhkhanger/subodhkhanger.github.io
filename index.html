@@ -8,6 +8,7 @@
     <!-- Example: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
     <style>
+        
        body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -118,7 +119,7 @@
         }
 
         .plot-container img, .image-container img {
-            max-width: 100%; /* Ensure images/plots are responsive */
+            max-width: 80%; /* Ensure images/plots are responsive */
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 10px; /* Space between multiple images/plots if necessary */
         }
@@ -171,6 +172,26 @@
             display: flex; /* Aligns date and title horizontally */
             align-items: baseline; /* Keeps items aligned properly */
         }
+        .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .same-size-images {
+    width: 600px; /* Adjust as needed */
+    height: 600px; /* Adjust as needed */
+    object-fit: cover; /* This helps maintain the aspect ratio of the images */
+}
+
+    .plot-container, .image-container {
+        flex: 1; /* Makes each container take up equal space */
+        text-align: center; /* Center-aligns the content (images) within each container */
+    }
+
+    img {
+        max-width: 100%; /* Ensures images are responsive and do not exceed their container's width */
+        height: auto; /* Maintains the aspect ratio */
+    }
         .date {
             font-size: 14px;
             color: #777;
@@ -183,6 +204,7 @@
         ul.justify-text {
         text-align: justify;
         text-justify: inter-word;
+        
     }
     </style>
     </style>
@@ -229,12 +251,12 @@
         </div>
     </div>
    
-    <div class="event" data-year="2023">
+    <!-- <div class="event" data-year="2023">
         <div class="content">
             <h2>Project 2 FAST SLAM</h2>
             <p>Description of Project 2. In this project, we focused on...</p>
         </div>
-    </div>
+    </div> -->
    
     <div class="event" data-year="2020">
         <div class="content">
@@ -250,16 +272,19 @@
             </ul>
             
             <!-- Placeholder for plots -->
-            <div class="plot-container">
-                <img src="path/to/your/plot1.png" alt="Sensor Optimization Plot">
-                <!-- Add more <img> tags as needed for additional plots -->
+            <div class="container">
+                <div class="container">
+                    <div class="plot-container">
+                        <img src="images/maximizing EIG_sparse_with_shift.png" alt="Sensor Optimization Plot" >
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="images/Objective_values_for_Different_QMC_Node_Sizes_for_sparse_with_shift.png" alt="Sensor Network Illustration" class="same-size-images">
+                    </div>
+                </div>
+                
             </div>
             
-            <!-- Placeholder for images -->
-            <div class="image-container">
-                <img src="path/to/your/image1.jpg" alt="Sensor Network Illustration">
-                <!-- Add more <img> tags as needed for additional images -->
-            </div>
         </div>
     </div>
     <div class="event" data-year="2013">
