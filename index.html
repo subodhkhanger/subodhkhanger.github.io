@@ -815,12 +815,214 @@
         <div class="section-header">
           <h2 class="section-title">Projects</h2>
           <p class="section-subtitle">
-            A selection of my work in robotics, machine learning, and computer
-            vision
+            A selection of my work in LLMs, computer vision, and numerical methods
           </p>
         </div>
 
         <div class="projects-grid">
+          <!-- Project: Ask Physics -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2024
+              </span>
+            </div>
+            <h3 class="project-title">askPhysics - Semantic Search for Plasma Physics Literature</h3>
+            <p class="project-description">
+              A semantic search system for plasma physics literature combining NLP with knowledge graphs. Enables intuitive queries like "Show me papers about electron density between 10^17 and 10^18 m^-3".
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-search feature-icon"></i>
+                <span class="feature-text"><strong>Natural Language Queries:</strong> Plain English with unit-aware search (eV, keV, m^-3)</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-project-diagram feature-icon"></i>
+                <span class="feature-text"><strong>Knowledge Graph:</strong> RDF ontology with SPARQL backend & Apache Jena Fuseki</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-robot feature-icon"></i>
+                <span class="feature-text"><strong>LLM Integration:</strong> GPT-4o-mini for parameter extraction with dynamic SPARQL generation</span>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">SPARQL</span>
+              <span class="tech-tag">GPT-4</span>
+            </div>
+            <a href="https://github.com/subodhkhanger/Ask_physics" target="_blank" class="github-link">
+              <i class="fab fa-github"></i>
+              View on GitHub
+            </a>
+          </article>
+
+          <!-- Project: DeepSat-VL -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2024
+              </span>
+            </div>
+            <h3 class="project-title">🛰️ DeepSat-VL: Oriented Object Detection in Satellite Imagery</h3>
+            <p class="project-description">
+              PyTorch transformer model for oriented object detection in satellite imagery. Supports NVIDIA CUDA, Apple Silicon (M1/M2/M3), and CPU with DETR-style architecture.
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-satellite feature-icon"></i>
+                <span class="feature-text"><strong>Oriented Detection:</strong> Rotated bounding boxes for 15 object classes</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-microchip feature-icon"></i>
+                <span class="feature-text"><strong>Universal GPU:</strong> Auto-detects CUDA → MPS → CPU</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-layer-group feature-icon"></i>
+                <span class="feature-text"><strong>Multiple Backbones:</strong> CLIP ViT, TIMM ViT, ResNet50</span>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">CUDA</span>
+              <span class="tech-tag">Transformers</span>
+            </div>
+            <a href="https://github.com/subodhkhanger/DeepSat-VL" target="_blank" class="github-link">
+              <i class="fab fa-github"></i>
+              View on GitHub
+            </a>
+          </article>
+
+          <!-- Project: Fire-ViT -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2024
+              </span>
+            </div>
+            <h3 class="project-title">🔥 Fire-ViT: Transformer-Based Fire Detection</h3>
+            <p class="project-description">
+              State-of-the-art vision transformer for fire and smoke detection with deformable attention for irregular fire shapes.
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-eye feature-icon"></i>
+                <span class="feature-text"><strong>Deformable Attention:</strong> Multi-Head Self-Attention with hierarchical encoder</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-balance-scale feature-icon"></i>
+                <span class="feature-text"><strong>Custom Losses:</strong> Focal, CIoU, Dice with attention regularization</span>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">ViT</span>
+              <span class="tech-tag">FCOS</span>
+            </div>
+            <a href="https://github.com/subodhkhanger/fireDetection-VLLM" target="_blank" class="github-link">
+              <i class="fab fa-github"></i>
+              View on GitHub
+            </a>
+          </article>
+
+          <!-- Project: KG Memory SPARQL -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2024
+              </span>
+            </div>
+            <h3 class="project-title">🧠 KG Memory (SPARQL Edition)</h3>
+            <p class="project-description">
+              Time-aware knowledge graph memory for LLM agents. Stores conversation context as RDF triples with chronological filters for semantic + temporal retrieval.
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-clock feature-icon"></i>
+                <span class="feature-text"><strong>Time-Aware:</strong> xsd:dateTime timestamps with TTL cache</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-database feature-icon"></i>
+                <span class="feature-text"><strong>Fuseki Backend:</strong> SPARQL UPDATE/SELECT for context retrieval</span>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">SPARQL</span>
+              <span class="tech-tag">RDF</span>
+              <span class="tech-tag">Docker</span>
+            </div>
+            <a href="https://github.com/subodhkhanger/kg-memory-sparql" target="_blank" class="github-link">
+              <i class="fab fa-github"></i>
+              View on GitHub
+            </a>
+          </article>
+
+          <!-- Project: Flow EKF -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2024
+              </span>
+            </div>
+            <h3 class="project-title">📊 Flow-Based Multi-Modal State Estimation</h3>
+            <p class="project-description">
+              Demonstrates normalizing flows for multi-modal state posteriors in 2D robot localization. Compares RealNVP flow vs Extended Kalman Filter.
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-chart-area feature-icon"></i>
+                <span class="feature-text"><strong>Normalizing Flows:</strong> Conditional RealNVP for multi-modal posteriors</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-robot feature-icon"></i>
+                <span class="feature-text"><strong>Robot Sim:</strong> 2D constant-velocity with nonlinear measurements</span>
+              </div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Normalizing Flows</span>
+              <span class="tech-tag">EKF</span>
+            </div>
+            <a href="https://github.com/subodhkhanger/flow_EKF" target="_blank" class="github-link">
+              <i class="fab fa-github"></i>
+              View on GitHub
+            </a>
+          </article>
+
+          <!-- Project: ECG LLM -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2024
+              </span>
+            </div>
+            <h3 class="project-title">❤️ ECG_LLM: ECG Analysis with LLMs</h3>
+            <p class="project-description">
+              Applying large language models to ECG signal analysis for medical diagnosis support with interpretable cardiac health insights.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">LLM</span>
+              <span class="tech-tag">Signal Processing</span>
+              <span class="tech-tag">Healthcare AI</span>
+            </div>
+            <a href="https://github.com/subodhkhanger/ECG_LLM" target="_blank" class="github-link">
+              <i class="fab fa-github"></i>
+              View on GitHub
+            </a>
+          </article>
+
           <!-- Project 1: LLama2 -->
           <article class="project-card reveal">
             <div class="project-header">
@@ -1013,7 +1215,7 @@
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-brand">Subodh Khanger</div>
-        <p class="footer-text">Building the future with robotics and AI</p>
+        <p class="footer-text">Building the future with LLMs and GPU-accelerated AI</p>
         <div class="footer-social">
           <a
             href="https://github.com/subodhkhanger"
