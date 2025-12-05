@@ -1,386 +1,1028 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- Add Font Awesome CDN link here -->
-    <!-- Example: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subodh Khanger | Research Scientist</title>
+    <meta
+      name="description"
+      content="Aspiring robotics engineer passionate about computer vision, perception, planning, and control."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <style>
-        
-       body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 100vh; /* Full viewport height */
-        }
-        .about-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: justify;
-            text-justify: inter-word;
-            padding: 20px;
-            max-width: 800px; /* Adjust based on your preference */
-            margin: auto; /* Centers the container horizontally */
-        }
-        .about {
-            padding: 0 15px;
-        }
-        .profile-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .icons a {
-            margin: 0 10px;
-            display: inline-block;
-            font-size: 24px; /* Icon size */
-        }
-        /* Placeholder for actual icon styles */
-        .fa-github, .fa-twitter, .fa-envelope {
-            /* Styling for icons */
-        }
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 10px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: #ddd;
-            top: 0;
-            bottom: 0;
-            left: 30px;
-        }
-        .event {
-            margin: 10px 0;
-            padding-left: 60px;
-            position: relative;
-        }
-        .event::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 15px;
-            background-color: #ddd;
-            width: 10px; /* Smaller circle/dot */
-            height: 10px; /* Smaller circle/dot */
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .event::after {
-            content: attr(data-year);
-            position: absolute;
-            right: 100%; /* Position the year to the left of the dot */
-            margin-right: -10px; /* Adjust spacing between the year and the dot */
-            top: 10px;
-            color: #333;
-            font-size: 12px; /* Adjust font size as needed */
-        }
-        .content {
-            padding: 10px 20px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-        .event {
-            position: relative;
-            padding-left: 60px; /* Adjust based on your layout */
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.8);
+            --bg-card-hover: rgba(255, 255, 255, 0.95);
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent-primary: #0891b2;
+            --accent-secondary: #06b6d4;
+            --accent-tertiary: #22d3d1;
+            --gradient-primary: linear-gradient(135deg, #0891b2, #06b6d4, #22d3d1);
+            --gradient-glow: linear-gradient(135deg, rgba(8, 145, 178, 0.3), rgba(6, 182, 212, 0.3), rgba(34, 211, 209, 0.3));
+            --border-color: rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 20px 60px rgba(8, 145, 178, 0.15);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .company-icon {
-            width: 74px; /* Adjust based on your icon size */
-            height: 74px; /* Adjust based on your icon size */
-            position: absolute;
-            left: -5px; /* Half of the icon's width to center it on the timeline */
-            top: 0; /* Adjust if you want to change the vertical positioning */
-            z-index: 2; /* Ensure it's above the timeline line */
-        }
-        .plot-container, .image-container {
-            text-align: center; /* Center the images/plots */
-            margin-top: 20px; /* Add space above the containers */
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        .plot-container img, .image-container img {
-            max-width: 80%; /* Ensure images/plots are responsive */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 10px; /* Space between multiple images/plots if necessary */
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        .job-timeline {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0;
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      /* Animated Background */
+      .bg-gradient {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: radial-gradient(
+            ellipse 80% 50% at 50% -20%,
+            rgba(8, 145, 178, 0.12),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 80% 60%,
+            rgba(6, 182, 212, 0.08),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 50% 50% at 20% 80%,
+            rgba(34, 211, 209, 0.06),
+            transparent
+          );
+        animation: gradientShift 15s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          opacity: 1;
         }
-        .job {
-            margin-bottom: 20px;
+        50% {
+          opacity: 0.8;
         }
-        .job-info {
-            text-align: left; /* Align the text of job title, company, date to the left */
+      }
+
+      /* Floating Particles */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--accent-primary);
+        border-radius: 50%;
+        opacity: 0.3;
+        animation: float 20s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
         }
-        .job-description {
-            text-align: justify;
-            text-justify: inter-word;
-            margin-top: 10px; /* Add some space between the job info and description */
+        10% {
+          opacity: 0.3;
         }
-        .job-title {
-            font-size: 18px;
-            font-weight: bold;
+        90% {
+          opacity: 0.3;
         }
-        .company {
-            font-size: 16px;
-            color: #555;
+        100% {
+          transform: translateY(-100vh) rotate(720deg);
+          opacity: 0;
         }
-        .date {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 5px;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 24px;
+        position: relative;
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 800px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
         }
-        .description ul {
-            padding-left: 20px; /* Adjust list padding */
-            list-style-type: disc; /* Style list bullets */
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .description li {
-            margin-bottom: 5px; /* Space out list items */
-            text-align: left; /* Ensure list items are aligned left */
+      }
+
+      .profile-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 32px;
+      }
+
+      .profile-glow {
+        position: absolute;
+        inset: -4px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        opacity: 0.6;
+        filter: blur(20px);
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.6;
         }
-        .featured-writing {
-            max-width: 900px;
-            margin: 40px 0 40px 0; /* Adjusted to remove auto centering, adding left margin if needed */
-            padding: 0;
-            text-align: left; /* Ensure content aligns to the left */
+        50% {
+          transform: scale(1.1);
+          opacity: 0.4;
         }
-        .writing-piece {
-            margin-bottom: 15px;
-            display: flex; /* Aligns date and title horizontally */
-            align-items: baseline; /* Keeps items aligned properly */
-        }
-        .container {
+      }
+
+      .profile-pic {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        background: linear-gradient(var(--bg-primary), var(--bg-primary))
+            padding-box,
+          var(--gradient-primary) border-box;
+        object-fit: cover;
+        position: relative;
+        z-index: 1;
+        transition: var(--transition-smooth);
+      }
+
+      .profile-pic:hover {
+        transform: scale(1.05);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 16px;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+      }
+
+      .hero .tagline {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin-bottom: 32px;
+        font-weight: 400;
+      }
+
+      .social-links {
         display: flex;
         justify-content: center;
+        gap: 16px;
+        margin-bottom: 48px;
+      }
+
+      .social-link {
+        display: flex;
         align-items: center;
-    }
-    .same-size-images {
-    width: 600px; /* Adjust as needed */
-    height: 600px; /* Adjust as needed */
-    object-fit: cover; /* This helps maintain the aspect ratio of the images */
-}
+        gap: 8px;
+        padding: 12px 24px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: var(--transition-smooth);
+        backdrop-filter: blur(10px);
+      }
 
-    .plot-container, .image-container {
-        flex: 1; /* Makes each container take up equal space */
-        text-align: center; /* Center-aligns the content (images) within each container */
-    }
+      .social-link:hover {
+        background: var(--bg-card-hover);
+        color: var(--text-primary);
+        border-color: var(--accent-primary);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+      }
 
-    img {
-        max-width: 100%; /* Ensures images are responsive and do not exceed their container's width */
-        height: auto; /* Maintains the aspect ratio */
-    }
-        .date {
-            font-size: 14px;
-            color: #777;
-            font-weight: bold;
+      .social-link i {
+        font-size: 1.1rem;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+      }
+
+      .scroll-indicator i {
+        font-size: 1.5rem;
+        color: var(--text-muted);
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
         }
-        .title {
-            margin-left: 10px;
-            font-size: 16px;
+        40% {
+          transform: translateX(-50%) translateY(-10px);
         }
-        ul.justify-text {
-        text-align: justify;
-        text-justify: inter-word;
-        
-    }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 100px 24px;
+        position: relative;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 16px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* About Section */
+      .about-card {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 48px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        backdrop-filter: blur(20px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gradient-primary);
+        opacity: 0.5;
+      }
+
+      .about-card p {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .project-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 40px;
+        transition: var(--transition-smooth);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+      }
+
+      .project-card:hover {
+        background: var(--bg-card-hover);
+        border-color: rgba(99, 102, 241, 0.3);
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--gradient-primary);
+        opacity: 0;
+        transition: var(--transition-smooth);
+      }
+
+      .project-card:hover::before {
+        opacity: 1;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .project-year {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--accent-primary);
+      }
+
+      .project-year i {
+        font-size: 0.8rem;
+      }
+
+      .project-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #10b981;
+      }
+
+      .project-status.in-progress {
+        background: rgba(245, 158, 11, 0.1);
+        border-color: rgba(245, 158, 11, 0.3);
+        color: #f59e0b;
+      }
+
+      .project-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+        line-height: 1.4;
+      }
+
+      .project-description {
+        color: var(--text-secondary);
+        margin-bottom: 24px;
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .project-features {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 16px;
+        background: rgba(99, 102, 241, 0.05);
+        border-radius: 12px;
+        transition: var(--transition-smooth);
+      }
+
+      .feature-item:hover {
+        background: rgba(99, 102, 241, 0.1);
+      }
+
+      .feature-icon {
+        color: var(--accent-primary);
+        margin-top: 2px;
+      }
+
+      .feature-text {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .project-media {
+        margin-top: 32px;
+      }
+
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .media-item {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: var(--transition-smooth);
+      }
+
+      .media-item:hover {
+        transform: scale(1.02);
+        border-color: var(--accent-primary);
+      }
+
+      .media-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .project-video {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 16px;
+        border: 1px solid var(--border-color);
+        margin: 0 auto;
+        display: block;
+      }
+
+      .company-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .company-badge img {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: contain;
+        background: white;
+        padding: 4px;
+      }
+
+      .company-badge span {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 60px 24px;
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+        background: var(--bg-secondary);
+      }
+
+      .footer-content {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .footer-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 16px;
+      }
+
+      .footer-text {
+        color: var(--text-muted);
+        margin-bottom: 24px;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .footer-social a {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .footer-social a:hover {
+        background: var(--accent-primary);
+        border-color: var(--accent-primary);
+        color: white;
+        transform: translateY(-4px);
+      }
+
+      .footer-copyright {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero {
+          padding: 80px 20px;
+        }
+
+        .social-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .social-link {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+        }
+
+        .project-card {
+          padding: 28px;
+        }
+
+        .about-card {
+          padding: 32px 24px;
+        }
+
+        .project-header {
+          flex-direction: column;
+        }
+
+        .media-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Smooth reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--bg-card);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-primary);
+      }
     </style>
-    </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
 
-<div class="profile-section">
-    <img src="images/pic.jpeg" alt="Profile Picture" class="profile-pic">
-    <div class="icons">
-        <!-- Replace span with actual <i> tags for Font Awesome icons -->
-     <a href="https://github.com/subodhkhanger" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://twitter.com/subodhkhanger" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-    <a href="mailto:subodh.khanger@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-
+    <!-- Floating Particles -->
+    <div class="particles">
+      <div class="particle" style="left: 10%; animation-delay: 0s"></div>
+      <div class="particle" style="left: 20%; animation-delay: 2s"></div>
+      <div class="particle" style="left: 30%; animation-delay: 4s"></div>
+      <div class="particle" style="left: 40%; animation-delay: 6s"></div>
+      <div class="particle" style="left: 50%; animation-delay: 8s"></div>
+      <div class="particle" style="left: 60%; animation-delay: 10s"></div>
+      <div class="particle" style="left: 70%; animation-delay: 12s"></div>
+      <div class="particle" style="left: 80%; animation-delay: 14s"></div>
+      <div class="particle" style="left: 90%; animation-delay: 16s"></div>
     </div>
-</div>
 
-<h1>My Portfolio</h1>
-<p>Welcome to my portfolio website. Here are some of my projects.</p>
-
-<div class="projects">
-    <!-- Project sections as before -->
-</div>
-
-<div class="about-container">
-    <div class="about">
-        <h2>About Me</h2>
-        <p>As an aspiring robotics engineer, I am passionate about leveraging technology to
-             address real-world challenges. With a solid foundation in computer vision,
-              perception, planning, and control, 
-            I am eager to contribute these skills to innovative projects.</p>
-    </div>
-</div>
-
-<h1>Project Timeline</h1>
-
-
-<div class="timeline">
-    <div class="event" data-year="2024">
-        <div class="content">
-            <h2>Project: Pretraining Based on the LLama2 Architecture to Generate Synthetic Videos for Model Training(in progress)</h2>
-            <p> This project leverages the advanced LLama2 architecture to pretrain models, focusing on generating high-quality synthetic videos. These videos are specifically designed to enhance model training for ADAS, aiming to bridge gaps in data availability and quality.
-                 The initiative is currently in progress, with ongoing efforts to refine and expand the capabilities of our synthetic video generation process to better serve ADAS development needs.</p>
-    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="profile-wrapper">
+          <div class="profile-glow"></div>
+          <img src="images/pic.jpeg" alt="Subodh Khanger" class="profile-pic" />
         </div>
-    </div>
-    <div class="event" data-year="2023">
-        <div class="content">
-            <h2>Project:  Multimodal Transformer Model For Auto Labeling Traffic Signs</h2>
-            <p> Utilizing advanced transformer architectures and ROS (Robot Operating System), automates the labeling process. This integration streamlines object recognition tasks in robotics and machine learning models, enhancing efficiency and accuracy.</p>
-            <video id="myVideo" width="520" height="240" controls>
-                <source src="videos/output_movie_1.mov" type="video/mp4">
+        <h1>Subodh Khanger</h1>
+        <p class="tagline">
+          Research Scientist • LLMs • GPU-Accelerated AI
+        </p>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/subodhkhanger"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://twitter.com/subodhkhanger"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-twitter"></i>
+            <span>Twitter</span>
+          </a>
+          <a href="mailto:subodh.khanger@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-card reveal">
+          <p>
+            I'm a <strong>research scientist</strong> specializing in <strong>large language models (LLMs)</strong>, <strong>numerical analysis</strong>, and <strong>GPU‑accelerated AI</strong>. My work spans from solving hard mathematical problems—numerical PDEs and Bayesian inverse problems—to building scalable LLM systems.
+          </p>
+          <p style="margin-top: 16px;">
+            I design <strong>retrieval‑augmented pipelines</strong>, <strong>multi‑tool agents</strong>, and <strong>distributed training workflows</strong> (DDP, DeepSpeed, FSDP) that leverage custom GPU kernels (CUDA, NCCL) for efficient training and inference. I enjoy bridging rigorous mathematics with modern AI, turning theory into robust software and agentic workflows that orchestrate multiple tools to deliver reliable results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">
+            A selection of my work in robotics, machine learning, and computer
+            vision
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: LLama2 -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2024
+              </span>
+              <span class="project-status in-progress">
+                <i class="fas fa-circle"></i>
+                In Progress
+              </span>
+            </div>
+            <h3 class="project-title">
+              Pretraining Based on the LLama2 Architecture to Generate Synthetic
+              Videos for Model Training
+            </h3>
+            <p class="project-description">
+              This project leverages the advanced LLama2 architecture to
+              pretrain models, focusing on generating high-quality synthetic
+              videos specifically designed to enhance model training for ADAS
+              (Advanced Driver Assistance Systems).
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-check-circle feature-icon"></i>
+                <span class="feature-text"
+                  >Bridges gaps in data availability and quality for autonomous
+                  driving systems</span
+                >
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle feature-icon"></i>
+                <span class="feature-text"
+                  >Ongoing efforts to refine and expand synthetic video
+                  generation capabilities</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Multimodal Transformer -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2023
+              </span>
+            </div>
+            <h3 class="project-title">
+              Multimodal Transformer Model For Auto Labeling Traffic Signs
+            </h3>
+            <p class="project-description">
+              Utilizing advanced transformer architectures and ROS (Robot
+              Operating System) to automate the labeling process. This
+              integration streamlines object recognition tasks in robotics and
+              machine learning models, enhancing efficiency and accuracy.
+            </p>
+            <div class="project-media">
+              <video class="project-video" id="trafficSignVideo" controls>
+                <source src="videos/output_movie_1.mov" type="video/mp4" />
                 Your browser does not support the video tag.
-            </video>
-            
-            <script>
-                // Get the video element
-                var video = document.getElementById('myVideo');
-            
-                // Wait until the metadata has loaded
-                video.addEventListener('loadedmetadata', function() {
-                    // Set the playback rate to 30%
-                    video.playbackRate = 0.5;
-                    video.currentTime = 5;
-
-                });
-            </script>
-        </div>
-    </div>
-   
-    <!-- <div class="event" data-year="2023">
-        <div class="content">
-            <h2>Project 2 FAST SLAM</h2>
-            <p>Description of Project 2. In this project, we focused on...</p>
-        </div>
-    </div> -->
-   
-    <div class="event" data-year="2020">
-        <div class="content">
-            <img src="images/freie-uni-berlin-logo-bildmarke.jpg" alt="Company Icon" class="company-icon">
-       
-            <h2>Project: Sensor Location Optimization Using QMC Points</h2>
-            <p>This project showcases the innovative application of Quasi-Monte Carlo (QMC) methods for optimizing sensor placements in complex environments. By leveraging the efficiency and uniformity of QMC points, we significantly improved the precision and coverage of sensor networks. This approach not only enhances the accuracy of environmental monitoring but also optimizes resource allocation, making it a pivotal advancement in sensor deployment strategies.</p>
-            
-            <ul class="justify-text">
-                <li>Efficiency Enhancement: Utilized QMC points to streamline sensor placements, resulting in a more efficient distribution that covers target areas comprehensively.</li>
-                <li>Accuracy Improvement: Achieved higher precision in data collection and environmental monitoring by optimizing sensor locations based on QMC algorithms.</li>
-                <li>Resource Optimization: Demonstrated cost-effective sensor deployment by minimizing the number of sensors needed without compromising data quality.</li>
-            </ul>
-            
-            <!-- Placeholder for plots -->
-            <div class="container">
-                <div class="container">
-                    <div class="plot-container">
-                        <img src="images/maximizing EIG_sparse_with_shift.png" alt="Sensor Optimization Plot" >
-                    </div>
-                    
-                    <div class="image-container">
-                        <img src="images/Objective_values_for_Different_QMC_Node_Sizes_for_sparse_with_shift.png" alt="Sensor Network Illustration" class="same-size-images">
-                    </div>
-                </div>
-                
+              </video>
             </div>
-            
-        </div>
-    </div>
-    <div class="event" data-year="2013">
-        <div class="content">
-            <h2>Project: Stock Market Prediction Using Combination of Neural Network and Genetic Algorithm and Market Sentiment Analysis Using Fuzzy Logic</h2>
-            <ul class="justify-text">
-                <li>Explored the integration of neural networks and genetic algorithms to predict stock market trends, enhancing predictive accuracy and model adaptability.</li>
-                <li>Conducted market sentiment analysis using fuzzy logic to interpret and quantify the impact of market sentiment on stock prices.</li>
-                <li>Developed a comprehensive system that combines quantitative analysis with behavioral finance principles, providing a more holistic approach to stock market prediction.</li>
-                <li>Utilized historical stock data and sentiment analysis from various news sources and social media platforms to feed into our predictive models.</li>
-                <li>Achieved significant improvements in prediction accuracy compared to traditional models, showcasing the potential of hybrid approaches in financial market analysis.</li>
-            </ul>
-            <div class="container">
-                <div class="container">
-                    <div class="plot-container">
-                        <img src="images/fuzzy.jpg" alt="Sensor Optimization Plot" >
-                    </div>
-                    
-                    <div class="image-container">
-                        <img src="images/arc.png" alt="Sensor Network Illustration" class="same-size-images">
-                    </div>
-                </div>
-                
+          </article>
+
+          <!-- Project 3: Sensor Optimization -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2020
+              </span>
             </div>
-        </div>
-    </div>
-</div>
-<!-- Profile section, About Me section, Project Timeline section -->
+            <div class="company-badge">
+              <img
+                src="images/freie-uni-berlin-logo-bildmarke.jpg"
+                alt="Freie Universität Berlin"
+              />
+              <span>Freie Universität Berlin</span>
+            </div>
+            <h3 class="project-title">
+              Sensor Location Optimization Using QMC Points
+            </h3>
+            <p class="project-description">
+              Innovative application of Quasi-Monte Carlo (QMC) methods for
+              optimizing sensor placements in complex environments. By
+              leveraging the efficiency and uniformity of QMC points, we
+              significantly improved the precision and coverage of sensor
+              networks.
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-bolt feature-icon"></i>
+                <span class="feature-text"
+                  ><strong>Efficiency Enhancement:</strong> Utilized QMC points
+                  to streamline sensor placements, resulting in comprehensive
+                  coverage</span
+                >
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-bullseye feature-icon"></i>
+                <span class="feature-text"
+                  ><strong>Accuracy Improvement:</strong> Achieved higher
+                  precision in data collection and environmental
+                  monitoring</span
+                >
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-coins feature-icon"></i>
+                <span class="feature-text"
+                  ><strong>Resource Optimization:</strong> Minimized the number
+                  of sensors needed without compromising data quality</span
+                >
+              </div>
+            </div>
+            <div class="project-media">
+              <div class="media-grid">
+                <div class="media-item">
+                  <img
+                    src="images/maximizing EIG_sparse_with_shift.png"
+                    alt="Sensor Optimization Plot"
+                  />
+                </div>
+                <div class="media-item">
+                  <img
+                    src="images/Objective_values_for_Different_QMC_Node_Sizes_for_sparse_with_shift.png"
+                    alt="QMC Node Sizes Analysis"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
 
-<!-- <h2>Professional Experience</h2>
+          <!-- Project 4: Stock Market Prediction -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <span class="project-year">
+                <i class="far fa-calendar-alt"></i>
+                2013
+              </span>
+            </div>
+            <h3 class="project-title">
+              Stock Market Prediction Using Neural Networks & Genetic Algorithms
+            </h3>
+            <p class="project-description">
+              Explored the integration of neural networks and genetic algorithms
+              to predict stock market trends, combined with market sentiment
+              analysis using fuzzy logic to interpret the impact of sentiment on
+              stock prices.
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-brain feature-icon"></i>
+                <span class="feature-text"
+                  >Enhanced predictive accuracy through hybrid neural network
+                  and genetic algorithm approach</span
+                >
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-chart-line feature-icon"></i>
+                <span class="feature-text"
+                  >Fuzzy logic-based sentiment analysis from news and social
+                  media platforms</span
+                >
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-trophy feature-icon"></i>
+                <span class="feature-text"
+                  >Significant improvements in prediction accuracy compared to
+                  traditional models</span
+                >
+              </div>
+            </div>
+            <div class="project-media">
+              <div class="media-grid">
+                <div class="media-item">
+                  <img src="images/fuzzy.jpg" alt="Fuzzy Logic Diagram" />
+                </div>
+                <div class="media-item">
+                  <img src="images/arc.png" alt="Neural Network Architecture" />
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="job-timeline">
-    <div class="job">
-        <div class="job-info">
-            <div class="job-title">PROGRAMMING RESEARCH ASSISTANT |Dahlem Center for</div>
-            <div class="company">Machine Learning and Robotics.</div>
-            <div class="date">May 2023 – present | Berlin, Germany</div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">Subodh Khanger</div>
+        <p class="footer-text">Building the future with robotics and AI</p>
+        <div class="footer-social">
+          <a
+            href="https://github.com/subodhkhanger"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://twitter.com/subodhkhanger"
+            target="_blank"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="mailto:subodh.khanger@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
-        <div class="job-description">
-            <ul class="description">
-                <li>Lead developer in a dynamic team, responsible for developing and implementing front-end web applications.</li>
-                <li>Managed projects from concept through completion, ensuring high performance and responsiveness of applications.</li>
-                
-            </ul>
-        </div>
-    </div>
-    
-    <div class="job">
-        <div class="job-info">
-            <div class="job-title">RESEARCH ASSISTANT</div>
-            <div class="company"> |Numerical mathematics of deterministic
-                and stochastic partial differential equations</div>
-            <div class="date">May 2018 - May 2020</div>
-        </div>
-        <div class="job-description">
-            <ul class="description">
-                <li>Developed and maintained code for client websites primarily using HTML, CSS, JavaScript, and jQuery.</li>
-                <li>Worked closely with clients to create vision, conceive designs, and consistently meet deadlines and requirements.</li>
-               
-            </ul>
-        </div>
-    </div> 
-  
-    <h2 style="text-align: left; margin-left: 0px;">Featured Writing</h2> 
-    <div class="featured-writing">
-      
-        <div class="writing-piece"><span class="date">Mar 2021</span><span class="title">A from-scratch tour of Bitcoin in Python</span></div>
-       
-    </div>
+        <p class="footer-copyright">
+          © 2024 Subodh Khanger. All rights reserved.
+        </p>
+      </div>
+    </footer>
 
-    
-</div> -->
+    <script>
+      // Scroll reveal animation
+      const revealElements = document.querySelectorAll(".reveal");
 
-</body>
+      const revealOnScroll = () => {
+        revealElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementTop < windowHeight - 100) {
+            element.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("load", revealOnScroll);
+
+      // Video playback settings
+      const trafficSignVideo = document.getElementById("trafficSignVideo");
+      if (trafficSignVideo) {
+        trafficSignVideo.addEventListener("loadedmetadata", function () {
+          this.playbackRate = 0.5;
+          this.currentTime = 5;
+        });
+      }
+    </script>
+  </body>
 </html>
