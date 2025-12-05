@@ -87,6 +87,75 @@
     </script>
     -->
 
+    <!-- FIREBASE ANALYTICS
+         Steps to enable:
+         1. Go to https://console.firebase.google.com/
+         2. Create a new project or select existing one
+         3. Add a Web App (click </> icon)
+         4. Copy your firebaseConfig values below
+         5. Enable Analytics in Firebase Console
+         6. Uncomment this entire section
+    -->
+    <!--
+    <script type="module">
+      // Import Firebase SDK
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+
+      // Your Firebase configuration (get this from Firebase Console)
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_SENDER_ID",
+        appId: "YOUR_APP_ID",
+        measurementId: "G-YOUR_MEASUREMENT_ID"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      // Log page view
+      logEvent(analytics, 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      // Optional: Track project card clicks
+      document.querySelectorAll('.project-card').forEach((card, index) => {
+        card.addEventListener('click', () => {
+          logEvent(analytics, 'project_view', {
+            project_name: card.querySelector('.project-title')?.textContent || 'Unknown',
+            project_index: index
+          });
+        });
+      });
+
+      // Optional: Track GitHub link clicks
+      document.querySelectorAll('.github-link').forEach(link => {
+        link.addEventListener('click', () => {
+          logEvent(analytics, 'github_click', {
+            repo_url: link.href
+          });
+        });
+      });
+
+      // Optional: Track social link clicks
+      document.querySelectorAll('.social-link').forEach(link => {
+        link.addEventListener('click', () => {
+          logEvent(analytics, 'social_click', {
+            platform: link.href.includes('github') ? 'github' : 
+                      link.href.includes('twitter') ? 'twitter' : 'email'
+          });
+        });
+      });
+
+      console.log('Firebase Analytics initialized');
+    </script>
+    -->
+
     <!-- ============================================
          END OPTIONAL TAGS
     ============================================= -->
